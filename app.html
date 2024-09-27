@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Mosquito</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="jogo.js" defer></script>
+</head>
+<body>
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png" alt="Vida 1" />
+            <img id="v2" src="imagens/coracao_cheio.png" alt="Vida 2" />
+            <img id="v3" src="imagens/coracao_cheio.png" alt="Vida 3" />
+        </div>
+
+        <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
+    </div>
+
+    <script>
+        window.addEventListener('resize', ajustaTamanhoPalcoJogo);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cronometro').textContent = tempo;
+
+            let criaMosca = setInterval(() => { 
+                posicaoRandomica();
+            }, criaMosquitoTempo);
+        });
+    </script>
+
+</body>
+</html>

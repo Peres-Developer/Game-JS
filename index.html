@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Jogo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilo.css">
+
+    <script>
+        function iniciarJogo() {
+            const nivel = document.getElementById('nivel').value;
+
+            if (nivel === '') {
+                alert('Selecione um nível para iniciar o jogo');
+                return false;
+            }
+
+            window.location.href = `app.html?${nivel}`;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+ 
+        <div class="mb-4">
+            <img src="imagens/game.png" alt="Logo do Jogo" class="img-fluid" />
+        </div>
+
+        <div class="mb-3 w-50">
+            <select class="form-control" id="nivel">
+                <option value="">-- Selecione o nível --</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+                <option value="chucknorris">Impossível</option>
+            </select>
+        </div>
+
+        <button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Jogo</button>
+    </div>
+
+</body>
+</html>
